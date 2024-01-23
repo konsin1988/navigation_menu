@@ -21,6 +21,10 @@ body {
   box-shadow: 10px 0 0 #4187f6;
   border-left: 10px solid #2b343b;
   overflow-x: hidden;
+  transition: width 0.5s;
+}
+.navigation:hover {
+  width: 300px;
 }
 .navigation ul {
   position: absolute;
@@ -40,6 +44,7 @@ body {
 .navigation ul li.active {
   background: #4187f6;
 }
+
 .navigation ul li a {
   position: relative;
   display: block;
@@ -47,6 +52,28 @@ body {
   display: flex;
   text-decoration: none;
   color: white;
+}
+.navigation ul li.active a::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #2b343b;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #4187f6;
+}
+.navigation ul li.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #2b343b;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #4187f6;
 }
 .navigation ul li a .icon {
   position: inherit;
